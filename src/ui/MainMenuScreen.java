@@ -1,0 +1,20 @@
+package ui;
+
+public class MainMenuScreen extends Screen {
+    public static void showMainMenuScreen() {
+        if(LoginScreen.getIsAccount()) {
+            displayHeader("Main Menu", "Select any Option");
+            System.out.printf("%-40s\n", "===========================================");
+            System.out.printf("\t\t\t\t%-40s\n", "Main Menu");
+            System.out.printf("%-40s\n", "===========================================");
+            System.out.printf("\t\t%-40s", "[1] View Account");
+            System.out.printf("\t\t%-40s", "[2] View Music Selection");
+        }
+    }
+    public static void performMainMenuOption(MainMenuOptions mainMenuOptions) {
+        switch(mainMenuOptions){
+            case eViewAccount:
+
+        }
+    }
+}
