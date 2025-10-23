@@ -14,7 +14,14 @@ public class MainMenuScreen extends Screen {
     public static void performMainMenuOption(MainMenuOptions mainMenuOptions) {
         switch(mainMenuOptions){
             case eViewAccount:
+                showViewAccount();
+                break;
+            case eViewMusicSelection:
+                showMusicSelection();
+                break;
 
         }
     }
+    private static void showViewAccount(){ System.out.println("Show View Account..."); }
+    private static void showMusicSelection(){ System.out.println("Show Music Selection..."); }
 }
