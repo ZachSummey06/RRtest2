@@ -7,13 +7,14 @@ import java.util.*;
 
 public class LoginScreen extends Screen {
     static boolean isAccount = false;
+    public static String username = "";
     public static void showLoginScreen() {
 
         UserManager userManager = new UserManager();
         userManager.loadUsersFromFile();
         ArrayList<User> users = userManager.getUsersList();
         User user = new User("", "");
-        String username = user.getUsername();
+        username = user.getUsername();
         String password = user.getPassword();
 
         displayHeader("Login", "Enter Username and Password");
@@ -28,8 +29,11 @@ public class LoginScreen extends Screen {
             isAccount = true;
             MainMenuScreen.showMainMenuScreen();
         }
-//        if(!isAccount){
-//           Write new username and password to a file.
+//       if(!isAccount){
+//           Set first name
+//           Set last initial/name
+//           Set new username and password by asking
+//           Write new information to the users file
 //        }
 
     }

@@ -2,7 +2,7 @@ package ui;
 
 import util.InputValidator;
 
-public enum MainMenuOptions extends InputValidator {
+public enum MainMenuOptions{
         eViewAccount (1),
         eViewMusicSelection(2);
 

@@ -10,11 +10,11 @@ public class UserManager {
 
     public UserManager() {
         users = new ArrayList<>();
-        this.userFilePath  = "data/users.csv";;
+        this.userFilePath  = "data/users.csv";
     }
 
     public void loadUsersFromFile(){
-        Scanner scnr = null;
+        Scanner scnr;
         try{
             String line;
             User  user;
@@ -49,7 +49,7 @@ public class UserManager {
     }
     public User findUser(String username) {
         for(User user: users){
-            if(user.getUsername().equals(username)){
+            if(user.getUsername().equalsIgnoreCase(username)){
                 return user;
             }
         }
