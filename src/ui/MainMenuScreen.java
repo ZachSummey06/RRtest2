@@ -17,7 +17,13 @@ public class MainMenuScreen extends Screen {
             System.out.printf("\t\t%-40s\n", "[3] Rate A Song");
         }
     }
-    public static void performMainMenuOption(MainMenuOptions mainMenuOptions) {
+    private static void handleUserSelection(User currentUser) {
+        int choice = InputValidator.readIntRange(1, 3);
+        MainMenuOptions option = MainMenuOptions.values()[choice - 1];
+        performMainMenuOption(option, currentUser);
+    }
+
+    public static void performMainMenuOption(MainMenuOptions mainMenuOptions, User currentUser) {
         switch(mainMenuOptions){
             case eViewAccount:
                 showViewAccount();
