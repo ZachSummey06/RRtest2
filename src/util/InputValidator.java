@@ -14,6 +14,16 @@ public class InputValidator {
             System.out.println(errorMessage); // why not in catch?
         }
     }
+    public static int readIntRange(int min, int max) {
+        int num;
+        do {
+            num = readIntNumber("Please enter " + min + " to " + max + ": ");
+            if (num < min || num > max) {
+                System.out.printf("Please enter a number between %d and %d: ", min, max);
+            }
+        } while (num < min || num > max);
+        return num;
+    }
 
     public static String readString() {
         return scanner.nextLine().trim();
