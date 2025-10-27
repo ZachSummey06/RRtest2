@@ -36,6 +36,16 @@ public class MainMenuScreen extends Screen {
                 break;
         }
     }
-    private static void showViewAccount(){ System.out.println("Show View Account..."); }
+    private static void showViewAccount(User currentUser) {
+        displayHeader("Your Account", "Account Details");
+
+        System.out.println("Username: " + currentUser.getUsername());
+        System.out.println("First Name: " + currentUser.getFirstName());
+        System.out.println("Last Name: " + currentUser.getLastName());
+
+        System.out.println("\nPress Enter to return to Main Menu...");
+        new Scanner(System.in).nextLine(); // wait for user to continue
+    }
+
     private static void showMusicSelection(){ System.out.println("Show Music Selection..."); }
 }
