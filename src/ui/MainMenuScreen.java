@@ -31,7 +31,9 @@ public class MainMenuScreen extends Screen {
             case eViewMusicSelection:
                 showMusicSelection();
                 break;
-
+            case eRateSong:
+                Rate.showRateScreen(currentUser);
+                break;
         }
     }
     private static void showViewAccount(){ System.out.println("Show View Account..."); }
