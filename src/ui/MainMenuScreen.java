@@ -1,5 +1,10 @@
 package ui;
 
+import model.User;
+import util.InputValidator;
+
+import java.util.Scanner;
+
 public class MainMenuScreen extends Screen {
     public static void showMainMenuScreen() {
         if(LoginScreen.getIsAccount()) {
