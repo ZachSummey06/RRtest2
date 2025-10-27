@@ -13,7 +13,8 @@ public class MainMenuScreen extends Screen {
             System.out.printf("\t\t\t\t%-40s\n", "Main Menu");
             System.out.printf("%-40s\n", "===========================================");
             System.out.printf("\t\t%-40s\n", "[1] View Account");
-            System.out.printf("\t\t%-40s", "[2] View Music Selection");
+            System.out.printf("\t\t%-40s\n", "[2] View Music Selection");
+            System.out.printf("\t\t%-40s\n", "[3] Rate A Song");
         }
     }
     public static void performMainMenuOption(MainMenuOptions mainMenuOptions) {
