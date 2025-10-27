@@ -26,7 +26,7 @@ public class MainMenuScreen extends Screen {
     public static void performMainMenuOption(MainMenuOptions mainMenuOptions, User currentUser) {
         switch(mainMenuOptions){
             case eViewAccount:
-                showViewAccount();
+                showViewAccount(currentUser);
                 break;
             case eViewMusicSelection:
                 showMusicSelection();
