@@ -6,7 +6,7 @@ import util.InputValidator;
 import java.util.Scanner;
 
 public class MainMenuScreen extends Screen {
-    public static void showMainMenuScreen() {
+    public static void showMainMenuScreen(User currentUser) {
         //we need to loop until users exits
             boolean keepRunning = true;
 
@@ -21,7 +21,7 @@ public class MainMenuScreen extends Screen {
             System.out.printf("\t\t%-40s\n", "[4] Exit");
             System.out.printf("%-40s\n", "===========================================");
             System.out.print("\nEnter your choice: ");  
-            handleUserSelection(currentUser); 
+            handleUserSelection(currentUser);
 
 
         }

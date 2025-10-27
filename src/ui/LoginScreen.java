@@ -27,7 +27,7 @@ public class LoginScreen extends Screen {
              password = user.getPassword();
             userManager.findUser(username, password);
             isAccount = true;
-            MainMenuScreen.showMainMenuScreen();
+            MainMenuScreen.showMainMenuScreen(user);
         }
 //       if(!isAccount){
 //           Set first name

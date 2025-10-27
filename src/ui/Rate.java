@@ -1,5 +1,7 @@
 package ui;
 
+import model.RatingManager;
+import model.SongRating;
 import util.InputValidator;
 import model.User;
 import java.io.FileWriter;
@@ -12,6 +14,7 @@ public class Rate extends Screen {
         displayHeader("Rate a Song", "Enter your rating details below");
 
         Scanner scanner = new Scanner(System.in);
+        RatingManager ratingManager = new RatingManager();
 
         System.out.print("Song Name: ");
         String songName = scanner.nextLine();
@@ -28,22 +31,14 @@ public class Rate extends Screen {
         System.out.print("Comments (optional): ");
         String comments = scanner.nextLine();
 
-        saveRatingToFile(currentUser.getUsername(), songName, albumName, artistName, rating, comments);
-
-        System.out.println("\n✅ Rating successfully submitted!");
-        System.out.printf(
-                "User: %s\nSong: %s\nAlbum: %s\nArtist: %s\nRating: %d\nComments: %s\n",
+        SongRating newRating = new SongRating(
                 currentUser.getUsername(), songName, albumName, artistName, rating, comments
         );
+
+        ratingManager.saveRating(newRating);
+
+        System.out.println("\n✅ Rating successfully submitted!");
+        System.out.println(newRating.toString());
     }
 
-    private static void saveRatingToFile(String username, String song, String album, String artist, int rating, String comments) {
-        String filePath = "data/ratings.csv";
-        try (FileWriter writer = new FileWriter(filePath, true)) {
-            writer.write(String.format("%s,%s,%s,%s,%d,\"%s\"\n",
-                    username, song, album, artist, rating, comments.replace("\"", "\"\"")));
-        } catch (IOException e) {
-            System.out.println("⚠️ Error saving rating: " + e.getMessage());
-        }
-    }
 }
