@@ -45,9 +45,9 @@ public class MainMenuScreen extends Screen {
                 Rate.showRateScreen(currentUser);
                 break;
             case eExit:
-            System.out.println("Goodbye, Thank you!");
-            keepRunning = false;
-            break;
+                System.out.println("Goodbye, Thank you!");
+                System.exit(0);
+                break;
                 
         }
     }
